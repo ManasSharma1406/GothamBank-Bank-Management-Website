@@ -1,0 +1,26 @@
+[
+    {
+        "Name": "kuldeep",
+        "Age": 23,
+        "Email": "factower@gmail.com",
+        "Pin": 2314,
+        "Account Number": "83DZ80",
+        "Balance": 0
+    },
+    {
+        "Name": "Manas Sharma",
+        "Age": 19,
+        "Email": "factower@gmail.com",
+        "Pin": 8564,
+        "Account Number": "M60B7A",
+        "Balance": 0
+    },
+    {
+        "Name": "Manas4321",
+        "Age": 34,
+        "Email": "Manas@gmail.com",
+        "Pin": 1234,
+        "Account Number": "03WY0W",
+        "Balance": 19050
+    }
+]

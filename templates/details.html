@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Details - Hacking Bank</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Account Details</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert {{ category }}">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+        <form method="post">
+            <input type="text" name="accnumber" placeholder="Account Number" required>
+            <input type="number" name="pin" placeholder="4 Digit Pin" required>
+            <button type="submit" class="btn">Show Details</button>
+        </form>
+        {% if userinfo %}
+        <div class="details-box">
+            <h3>Your Details</h3>
+            <ul>
+                {% for key, value in userinfo.items() %}
+                <li><b>{{ key }}:</b> {{ value }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endif %}
+        <a href="/" class="btn back">Back</a>
+    </div>
+</body>
+</html>

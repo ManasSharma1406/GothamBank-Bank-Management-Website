@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Deposit Money - Gotham Bank{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-6">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="mb-0">Deposit Money</h3>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('deposit') }}">
+                    <div class="mb-3">
+                        <label for="amount" class="form-label">Amount (₹)</label>
+                        <input type="number" class="form-control" id="amount" name="amount" min="1" max="10000" required>
+                        <div class="form-text">Maximum deposit amount is ₹10,000 per transaction.</div>
+                    </div>
+                    <div class="d-grid gap-2">
+                        <button type="submit" class="btn btn-primary">Deposit</button>
+                        <a href="{{ url_for('dashboard') }}" class="btn btn-outline-secondary">Back to Dashboard</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

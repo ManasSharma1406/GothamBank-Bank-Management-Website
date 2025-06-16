@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block title %}Profile - Gotham Bank{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="mb-0">Account Profile</h3>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h4 class="mb-3">Personal Information</h4>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <strong>Name</strong>
+                                <span>{{ current_user.name }}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <strong>Email</strong>
+                                <span>{{ current_user.email }}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <strong>Account Number</strong>
+                                <span>{{ current_user.id }}</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h4 class="mb-3">Account Details</h4>
+                        <ul class="list-group list-group-flush mb-4">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <strong>Balance</strong>
+                                <span>₹{{ current_user.balance }}</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <strong>Account Status</strong>
+                                <span class="badge bg-success">Active</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                <strong>Member Since</strong>
+                                <span>2024</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="d-grid gap-2">
+                    <a href="{{ url_for('dashboard') }}" class="btn btn-primary">Back to Dashboard</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 

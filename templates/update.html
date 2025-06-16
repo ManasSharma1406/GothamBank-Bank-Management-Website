@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Details - Hacking Bank</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Update Details</h2>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="alert {{ category }}">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+        <form method="post">
+            <input type="text" name="accnumber" placeholder="Account Number" required>
+            <input type="number" name="pin" placeholder="4 Digit Pin" required>
+            <select name="field" required>
+                <option value="Name">Name</option>
+                <option value="Age">Age</option>
+                <option value="Email">Email</option>
+                <option value="Pin">Pin</option>
+            </select>
+            <input type="text" name="new_value" placeholder="New Value" required>
+            <button type="submit" class="btn">Update</button>
+        </form>
+        <a href="/" class="btn back">Back</a>
+    </div>
+</body>
+</html>

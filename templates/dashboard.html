@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard - Gotham Bank{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-header">
+                <h4 class="mb-0">Account Balance</h4>
+            </div>
+            <div class="card-body">
+                <h2 class="text-center mb-0">₹{{ current_user.balance }}</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-header">
+                <h4 class="mb-0">Account Number</h4>
+            </div>
+            <div class="card-body">
+                <h2 class="text-center mb-0">{{ current_user.id }}</h2>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-header">
+                <h4 class="mb-0">Account Holder</h4>
+            </div>
+            <div class="card-body">
+                <h2 class="text-center mb-0">{{ current_user.name }}</h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-header">
+                <h4 class="mb-0">Quick Actions</h4>
+            </div>
+            <div class="card-body">
+                <div class="d-grid gap-3">
+                    <a href="{{ url_for('deposit') }}" class="btn btn-primary">Deposit Money</a>
+                    <a href="{{ url_for('withdraw') }}" class="btn btn-primary">Withdraw Money</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-header">
+                <h4 class="mb-0">Account Information</h4>
+            </div>
+            <div class="card-body">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Email
+                        <span class="text-muted">{{ current_user.email }}</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between align-items-center">
+                        Account Status
+                        <span class="badge bg-success">Active</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %} 
